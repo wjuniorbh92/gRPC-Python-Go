@@ -23,7 +23,7 @@ def get_stock_price():
 
 
 def run():
-    with grpc.insecure_channel('localhost:50051') as channel:
+    with grpc.insecure_channel('server:50051') as channel:
         stub = stock_pb2_grpc.SaveSharePriceStub(channel)
 
         server_response = stub.StoreStockDatabase(get_stock_price())
