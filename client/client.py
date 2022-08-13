@@ -5,12 +5,7 @@ from investing import get_data
 
 
 def get_stock_price():
-    try:
-        data = get_data()
-    except:
-        print("Error")
-        #data = []
-
+    data = get_data()
     if len(data) < 1:
         stock_request = stock_pb2.StockPrice(
             symbol="ERROR", last="ERROR")
